@@ -108,7 +108,7 @@ document.addEventListener('mousemove', function (event) {
 });
 
 window.onkeypress = function(event) {
-    if (event.keyCode == 32)
+    if (event.key == "Enter")
     {        
         if (cat1click == true)
         {   
@@ -150,13 +150,13 @@ window.onkeypress = function(event) {
 }
 
 reset.addEventListener('click',function(){
-cat1.style.transform="rotate(0deg)";
+cat1.style.transform="rotate(90deg)";
 cat1.style.top=500+"px";
 cat1.style.left=500+"px";
-cat2.style.transform="rotate(0deg)";
+cat2.style.transform="rotate(270deg)";
 cat2.style.top=200+"px";
 cat2.style.left=200+"px";
-dog1.style.transform="rotate(0deg)";
+dog1.style.transform="rotate(180deg)";
 dog1.style.top=300+"px";
 dog1.style.left=800+"px";
 dog2.style.transform="rotate(0deg)";
