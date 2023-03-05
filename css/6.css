@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Nunito:wght@500&display=swap");
+:root {
+  --clr1: #252d2e;
+  --clr2: #e0e0e0;
+  --clr3: #ffffff;
+  --clr4: #000000;
+  --clr5: #998be9;
+}
+.content {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 95%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+}
+.card {
+  position: absolute;
+  background-color: var(--clr3);
+  border-radius: 5px;
+  margin: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.field {
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  border: none;
+  background-color: #e0e0e0;
+  text-align: center;
+  width: 15vw;
+  border-radius: 5px;
+}
+.text {
+  text-align: center;
+  font-size: 18px;
+}
+.headertext {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
+}
+button {
+  background-color: var(--clr5);
+  border: none;
+  border-radius: 5px;
+  color: var(--clr3);
+  font-family: "Nunito", sans-serif;
+  font-size: 20px;
+  padding: 5px;
+  margin: 10px;
+  width: 15vw;
+}
+button:hover {
+  opacity: 60%;
+  transition: 0.3s;
+}
+button:active {
+  opacity: 100%;
+  transition: 0.3s;
+}
+
+.menu {
+  display: none;
+}
+.caption1 {
+  user-select: none;
+  opacity: 0;
+  color: red;
+}
+.game1 {
+  display: none;
+  width: 60%;
+  height: 500px;
+}
+
+.gameover {
+  display: none;
+  opacity: 0;
+  background-color: red;
+  color: var(--clr3);
+  user-select: none;
+}
+
+.result {
+  display: none;
+  opacity: 0;
+  background-color: var(--clr5);
+  color: var(--clr3);
+  user-select: none;
+}
+
+.descr1 {
+  height: 10%;
+  width: 100%;
+  user-select: none;
+  transition: 1s;
+}
+.timer {
+  height: 5%;
+  width: 200px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: var(--clr2);
+  border-radius: 5px;
+  opacity: 0;
+}
+.bar {
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  background-color: var(--clr5);
+  transition: 0.5s linear;
+}
+.control1 {
+  height: 10%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gamescreen {
+  height: 75%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.place {
+  font-size: 60px;
+  font-weight: 600;
+  user-select: none;
+  color: var(--clr3);
+  background-color: var(--clr5);
+  border-radius: 25px;
+  opacity: 0;
+}
+.item {
+  position: absolute;
+  font-size: 60px;
+  font-weight: 600;
+  user-select: none;
+  color: var(--clr3);
+  background-color: var(--clr5);
+  border-radius: 25px;
+}
+
+.item:hover {
+  opacity: 80%;
+}
+
+@media (max-width: 1200px) {
+  .card {
+    width: 360px;
+  }
+  .main-header {
+    width: 360px;
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .card {
+    width: 280px;
+  }
+}

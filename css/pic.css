@@ -1,179 +1,176 @@
-.pic{
-    position: relative;
+.pic {
+  position: relative;
 }
-.antenn1{
-    position: absolute;
-    top: 20px;
-    left: 125px;
-    border-radius: 100%;
-    width: 20px;
-    height: 20px;
-    background-color: #000000;
+.antenn1 {
+  position: absolute;
+  top: 20px;
+  left: 125px;
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+  background-color: #000000;
 }
-.antenn2{
-    position: absolute;  
-    transform: rotate(50deg);
-    top: 10px;
-    left: 145px;
-    border-radius: 5px;
-    width: 3px;
-    height: 25px;
-    background-color: #000000; 
+.antenn2 {
+  position: absolute;
+  transform: rotate(50deg);
+  top: 10px;
+  left: 145px;
+  border-radius: 5px;
+  width: 3px;
+  height: 25px;
+  background-color: #000000;
 }
-.antenn3{
-    position: absolute;  
-    transform: rotate(-10deg);
-    top: 10px;
-    left: 135px;
-    border-radius: 5px;
-    width: 3px;
-    height: 32px;
-    background-color: #000000; 
+.antenn3 {
+  position: absolute;
+  transform: rotate(-10deg);
+  top: 10px;
+  left: 135px;
+  border-radius: 5px;
+  width: 3px;
+  height: 32px;
+  background-color: #000000;
 }
-.wheels{
-    position: absolute;     
-    top: 122px;
-    left: 85px;
-    border-radius: 10px;
-    width: 80px;
-    height: 12px;    
-    background: linear-gradient(#ff7700, #222222);
+.wheels {
+  position: absolute;
+  top: 122px;
+  left: 85px;
+  border-radius: 10px;
+  width: 80px;
+  height: 12px;
+  background: linear-gradient(#ff7700, #222222);
 }
-.head{
-    position: absolute;     
-    top: 25px;
-    left: 100px;
-    border-radius: 50%;
-    width: 50px;
-    height: 30px;
-    
-    background: radial-gradient(#ffcccc, #ff3333);
+.head {
+  position: absolute;
+  top: 25px;
+  left: 100px;
+  border-radius: 50%;
+  width: 50px;
+  height: 30px;
+
+  background: radial-gradient(#ffcccc, #ff3333);
 }
-.eye1{    
-    position: absolute;     
-    top: 33px;
-    left: 105px;
-    border-radius: 100%;
-    border: #000000 2px solid;
-    width: 10px;
-    height: 10px;
-    background-color: #7777ff; 
+.eye1 {
+  position: absolute;
+  top: 33px;
+  left: 105px;
+  border-radius: 100%;
+  border: #000000 2px solid;
+  width: 10px;
+  height: 10px;
+  background-color: #7777ff;
 }
-.eye2{    
-    position: absolute;     
-    top: 33px;
-    left: 120px;
-    border-radius: 100%;
-    border: #000000 2px solid;
-    width: 10px;
-    height: 10px;
-    background-color: #7777ff; 
+.eye2 {
+  position: absolute;
+  top: 33px;
+  left: 120px;
+  border-radius: 100%;
+  border: #000000 2px solid;
+  width: 10px;
+  height: 10px;
+  background-color: #7777ff;
 }
-.eye3{
-    position: absolute;     
-    top: 33px;
-    left: 135px;
-    border-radius: 100%;
-    border: #000000 2px solid;
-    width: 10px;
-    height: 10px;
-    background-color: #7777ff; 
+.eye3 {
+  position: absolute;
+  top: 33px;
+  left: 135px;
+  border-radius: 100%;
+  border: #000000 2px solid;
+  width: 10px;
+  height: 10px;
+  background-color: #7777ff;
 }
-.hands{
-    position: absolute;     
-    top: 70px;
-    left: 75px;
-    border-radius: 10px;
-    width: 100px;
-    height: 10px;
-    background-color: #000000; 
+.hands {
+  position: absolute;
+  top: 70px;
+  left: 75px;
+  border-radius: 10px;
+  width: 100px;
+  height: 10px;
+  background-color: #000000;
 }
-.lefthand1{
-    position: absolute;     
-    top: 70px;
-    left: 75px;
-    border-radius: 10px;
-    width: 10px;
-    height: 30px;
-    background-color: #000000; 
+.lefthand1 {
+  position: absolute;
+  top: 70px;
+  left: 75px;
+  border-radius: 10px;
+  width: 10px;
+  height: 30px;
+  background-color: #000000;
 }
-.lefthand2{
-    position: absolute;
-    top: 95px;
-    left: 68px;
-    width: 0; 
-    height: 0; 
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;    
-    border-top: 12px solid #ff3333;
+.lefthand2 {
+  position: absolute;
+  top: 95px;
+  left: 68px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #ff3333;
 }
 
-.righthand1{
-    position: absolute;     
-    top: 70px;
-    left: 165px;
-    border-radius: 10px;
-    width: 10px;
-    height: 30px;
-    background-color: #000000; 
+.righthand1 {
+  position: absolute;
+  top: 70px;
+  left: 165px;
+  border-radius: 10px;
+  width: 10px;
+  height: 30px;
+  background-color: #000000;
 }
-.righthand2{
-    position: absolute;
-    top: 95px;
-    left: 158px;
-    width: 0; 
-    height: 0; 
-    border-left: 12px solid transparent;
-    border-right: 12px solid transparent;    
-    border-top: 12px solid #ff3333;
-}
-
-.robobody{
-   position: absolute;     
-    top: 60px;
-    left: 100px;
-    border-radius: 10px;
-    width: 50px;
-    height: 70px;
-    background-color: #ff3333; 
-}
-.round{
-    position: absolute;     
-    top: 65px;
-    left: 108px;
-    border-radius: 100%;
-    border: 5px #000000 solid;
-    width: 25px;
-    height: 25px;
-    background-color: #ff3333; 
-}
-.bodyline1{
-    position: absolute;     
-    top: 102px;
-    left: 112px;
-    border-radius: 5px;    
-    width: 27px;
-    height: 5px;
-    background-color: #000000; 
-}
-.bodyline2{
-    position: absolute;     
-    top: 110px;
-    left: 112px;
-    border-radius: 5px;    
-    width: 27px;
-    height: 5px;
-    background-color: #000000; 
-}
-.bodyline3{
-    position: absolute;     
-    top: 118px;
-    left: 112px;
-    border-radius: 5px;    
-    width: 27px;
-    height: 5px;
-    background-color: #000000; 
+.righthand2 {
+  position: absolute;
+  top: 95px;
+  left: 158px;
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid #ff3333;
 }
 
-
-
+.robobody {
+  position: absolute;
+  top: 60px;
+  left: 100px;
+  border-radius: 10px;
+  width: 50px;
+  height: 70px;
+  background-color: #ff3333;
+}
+.round {
+  position: absolute;
+  top: 65px;
+  left: 108px;
+  border-radius: 100%;
+  border: 5px #000000 solid;
+  width: 25px;
+  height: 25px;
+  background-color: #ff3333;
+}
+.bodyline1 {
+  position: absolute;
+  top: 102px;
+  left: 112px;
+  border-radius: 5px;
+  width: 27px;
+  height: 5px;
+  background-color: #000000;
+}
+.bodyline2 {
+  position: absolute;
+  top: 110px;
+  left: 112px;
+  border-radius: 5px;
+  width: 27px;
+  height: 5px;
+  background-color: #000000;
+}
+.bodyline3 {
+  position: absolute;
+  top: 118px;
+  left: 112px;
+  border-radius: 5px;
+  width: 27px;
+  height: 5px;
+  background-color: #000000;
+}

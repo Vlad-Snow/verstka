@@ -1,82 +1,64 @@
-@import url('https://fonts.googleapis.com/css2?family=Allura&family=Nunito:wght@500&display=swap');
-:root{
---clr1:#252D2E;
---clr2:#e0e0e0;
---clr3:#ffffff;
---clr4:#000000;
---clr5:#998be9;
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Nunito:wght@500&display=swap");
+:root {
+  --clr1: #252d2e;
+  --clr2: #e0e0e0;
+  --clr3: #ffffff;
+  --clr4: #000000;
+  --clr5: #998be9;
 }
 
-
-
-.content{
-display: flex;
-width: 100%;
-height: 95%;
-justify-content: space-evenly;
-align-items: center;
-flex-direction: column;
-
-
+.content {
+  display: flex;
+  width: 100%;
+  height: 95%;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
 }
 
-
-
-
-.card{
- background-color: var(--clr3);
- border-radius: 3px;
- width: 80vw;
- margin: 15px;
- padding: 20px;
-display: flex;
-flex-direction: column;
-align-items: center;
-
- 
- }
-
-
-.card .text{
-    text-align: center; 
-}
-.card .headertext{
-    text-align: center; 
-    font-weight: 900;
-    font-size: 30px;
+.card {
+  background-color: var(--clr3);
+  border-radius: 3px;
+  width: 80vw;
+  margin: 15px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.pic{
-width: 200px;
-height: 200px;
+.card .text {
+  text-align: center;
+}
+.card .headertext {
+  text-align: center;
+  font-weight: 900;
+  font-size: 30px;
 }
 
-@media (max-width: 1200px){
-    .card{
-        width: 360px;
-    }
-    .main-header{
-        width: 360px;
-    }
-
-
+.pic {
+  width: 200px;
+  height: 200px;
 }
 
-@media(max-width:800px){
-.content{
-flex-direction: column;
-align-items: center;
+@media (max-width: 1200px) {
+  .card {
+    width: 360px;
+  }
+  .main-header {
+    width: 360px;
+  }
 }
 
+@media (max-width: 800px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-@media(max-width:400px){
-    .card{
-        width: 280px;
-    }
-   
-
+@media (max-width: 400px) {
+  .card {
+    width: 280px;
+  }
 }
-
-
-    
