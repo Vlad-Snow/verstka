@@ -9,6 +9,7 @@ let mode3 = document.querySelector(".mode3");
 let btn1 = document.querySelector(".btn1");
 let btn2 = document.querySelector(".btn2");
 let back1 = document.querySelector(".back1");
+let back2 = document.querySelector(".back2");
 let showtime;
 let timer = document.querySelector(".timer");
 let bar = document.querySelector(".bar");
@@ -20,6 +21,10 @@ let result = document.querySelector(".result");
 let scorebox = document.querySelector(".scorebox");
 let length;
 let items = document.querySelector(".items");
+let raiting = document.querySelector(".raiting");
+let table = document.querySelector(".table");
+let showtable = document.querySelector(".showtable");
+
 let item = [];
 let numbers = [];
 let clicked = [];
@@ -32,6 +37,16 @@ let username;
 let time;
 let countdown;
 let score;
+var winners;
+var records;
+
+if (localStorage.firstlaunched == undefined) {
+  winners = ["-", "-", "-", "-", "-", "-", "-", "-", "-", "-"];
+  records = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+  localStorage.setItem("save0", JSON.stringify(winners));
+  localStorage.setItem("save1", JSON.stringify(records));
+  localStorage.firstlaunched = "checked";
+}
 
 function getX(element) {
   let center =
@@ -97,7 +112,7 @@ function checkRange(j, length) {
   for (let i = 0; i < length; i++) {
     if (getRange(item[j], place[i]) < 50) {
       item[j].style.left = getX(place[i]) - 18 + "px";
-      item[j].style.top = getY(place[i]) - 36 + "px";
+      item[j].style.top = getY(place[i]) - 40 + "px";
 
       if (item[j].innerHTML == place[i].innerHTML) {
         correct[j] = true;
@@ -115,6 +130,49 @@ function checkRange(j, length) {
   }
 }
 
+function saveResult() {
+  winners = JSON.parse(localStorage.getItem("save0"));
+  records = JSON.parse(localStorage.getItem("save1"));
+  if (records[9] < score) {
+    let existuser = false;
+    for (let i = 0; i < 10; i++) {
+      if (username == winners[i]) {
+        records[i] = score;
+        existuser = true;
+      }
+    }
+    if (existuser == false) {
+      winners[9] = username;
+      records[9] = score;
+    }
+    for (let i = 0; i < 9; i++) {
+      for (let j = 0; j < 9; j++) {
+        if (records[j] < records[j + 1]) {
+          let bufferA = records[j + 1];
+          records[j + 1] = records[j];
+          records[j] = bufferA;
+          let bufferB = winners[j + 1];
+          winners[j + 1] = winners[j];
+          winners[j] = bufferB;
+        }
+      }
+    }
+
+    localStorage.setItem("save0", JSON.stringify(winners));
+    localStorage.setItem("save1", JSON.stringify(records));
+  }
+}
+
+function updateRating() {
+  winners = JSON.parse(localStorage.getItem("save0"));
+  records = JSON.parse(localStorage.getItem("save1"));
+  raiting.innerHTML = "";
+  for (let i = 0; i < 10; i++) {
+    raiting.innerHTML +=
+      "<div class='text'>" + winners[i] + " - " + records[i] + "</div>";
+  }
+}
+
 function win() {
   score = countdown * difficulty;
   restart();
@@ -127,6 +185,7 @@ function win() {
   setTimeout(() => {
     result.style.display = "none";
   }, 4000);
+  saveResult();
 }
 
 function defeat() {
@@ -323,6 +382,18 @@ btn1.addEventListener("click", function () {
     items.style.display = "none";
     difficulty = 0;
   }
+});
+
+showtable.addEventListener("click", function () {
+  table.style.display = "flex";
+  login.style.display = "none";
+  user.value = "";
+  updateRating();
+});
+
+back2.addEventListener("click", function () {
+  table.style.display = "none";
+  login.style.display = "flex";
 });
 
 window.onkeypress = function (event) {

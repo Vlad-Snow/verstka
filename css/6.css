@@ -163,6 +163,20 @@ button:active {
   }
 }
 
+.table{
+  display: none;
+  width: 20%;
+}
+
+.raiting{
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  background-color: #e0e0e0;
+  width: 80%;
+}
+
 @media (max-width: 800px) {
   .content {
     flex-direction: column;
