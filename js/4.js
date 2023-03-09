@@ -55,5 +55,12 @@ swap.addEventListener("click", function () {
   let changed = document.getElementsByClassName("class2");
   for (let i = 0; i <= changed.length; i += 1) {
     changed[i].style.fontWeight = "900";
+    changed[i].style.border = "1px solid red";
   }
+  let changed2 = document.getElementsByClassName("class1");
+  for (let i = 0; i <= changed2.length; i += 1) {
+    
+    changed2[i].style.border = "1px solid red";
+  }
+
 });

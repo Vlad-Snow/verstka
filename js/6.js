@@ -6,11 +6,13 @@ let menu = document.querySelector(".menu");
 let mode1 = document.querySelector(".mode1");
 let mode2 = document.querySelector(".mode2");
 let mode3 = document.querySelector(".mode3");
+let mode4 = document.querySelector(".mode4");
 let btn1 = document.querySelector(".btn1");
 let btn2 = document.querySelector(".btn2");
 let back1 = document.querySelector(".back1");
 let back2 = document.querySelector(".back2");
 let showtime;
+let movement;
 let timer = document.querySelector(".timer");
 let bar = document.querySelector(".bar");
 let game1 = document.querySelector(".game1");
@@ -103,6 +105,10 @@ function setGame() {
   }
   if (difficulty == 3) {
     time = 25000;
+    length = 8;
+  }
+  if (difficulty == 4) {
+    time = 20000;
     length = 8;
   }
 }
@@ -206,6 +212,7 @@ function restart() {
     fadeElement(place[i]);
   }
   clearInterval(showtime);
+  clearInterval(movement);
   fadeElement(timer);
   showElement(descr1);
   setTimeout(() => {
@@ -225,6 +232,15 @@ function startGame1() {
 
   for (let i = 0; i < length; i++) {
     numbers.push(Math.round(Math.random() * 9));
+  }
+
+  if (difficulty == 4) {
+    numbers.sort();
+  }
+
+  let moving = [];
+  for (let i = 0; i < length; i++) {
+    moving[i] = true;
     place.push();
     let node = document.createElement("div");
     node.classList.add("place");
@@ -234,6 +250,14 @@ function startGame1() {
     place[i] = document.querySelector(".place" + i);
   }
   fadeElement(descr1);
+
+  if (difficulty == 4) {
+    for (let i = 0; i < length; i++) {
+      place[i].style.transition = "0";
+      place[i].style.color = "var(--clr5)";
+    }
+  }
+
   setTimeout(() => {
     for (let i = 0; i < length; i++) {
       showElement(place[i]);
@@ -263,11 +287,13 @@ function startGame1() {
 
       correct[i] = false;
       item[i].addEventListener("click", function () {
+        item[i].style.transition = "none";
         if (clicked[i] == true) {
           clicked[i] = false;
           checkRange(i, length);
         } else {
           clicked[i] = true;
+          moving[i] = false;
         }
       });
       document.addEventListener("mousemove", function (event) {
@@ -307,6 +333,31 @@ function startGame1() {
         defeat();
       }
     }, time / 100);
+    let movedir = 0;
+    movement = setInterval(() => {
+      if (difficulty == 3) {
+        for (let i = 0; i < length; i++) {
+          if (moving[i] == true) {
+            item[i].style.transition = "0.5s";
+          }
+          if (moving[i] == true) {
+            if (i % 2 == 0 && movedir % 2 == 0) {
+              item[i].style.left = getX(item[i]) + 100 + "px";
+            }
+            if (i % 2 == 0 && movedir % 2 != 0) {
+              item[i].style.left = getX(item[i]) - 130 + "px";
+            }
+            if (i % 2 != 0 && movedir % 2 == 0) {
+              item[i].style.left = getX(item[i]) - 130 + "px";
+            }
+            if (i % 2 != 0 && movedir % 2 != 0) {
+              item[i].style.left = getX(item[i]) + 100 + "px";
+            }
+          }
+        }
+      }
+      movedir += 1;
+    }, 1000);
   }, time / 10);
 }
 
@@ -346,6 +397,13 @@ mode2.addEventListener("click", function () {
 mode3.addEventListener("click", function () {
   if (difficulty == 0) {
     difficulty = 3;
+    setGame();
+  }
+});
+
+mode4.addEventListener("click", function () {
+  if (difficulty == 0) {
+    difficulty = 4;
     setGame();
   }
 });

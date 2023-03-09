@@ -68,8 +68,15 @@ document.addEventListener("mousemove", function (event) {
   if (cat1click == true) {
     xAxis = event.pageX - 60;
     yAxis = event.pageY - 80;
-    cat1.style.top = yAxis + "px";
-    cat1.style.left = xAxis + "px";
+    if (event.pageX<window.screen.width){
+      
+      cat1.style.left = xAxis + "px";
+    }
+    if (event.pageY<window.screen.height){
+      
+      cat1.style.top = yAxis + "px";
+    }
+   
     cat1width = xAxis;
   }
   if (cat2click == true) {
